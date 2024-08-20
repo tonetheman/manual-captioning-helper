@@ -62,7 +62,7 @@ class ImageTagger:
         h_ratio = image.height / (self.root.winfo_height() // 2)
         ratio = max(w_ratio, h_ratio)
 
-        image = image.resize((int(image.width / ratio), int(image.height / ratio)), Image.ANTIALIAS)
+        image = image.resize((int(image.width / ratio), int(image.height / ratio)), Image.LANCZOS)
         photo = ImageTk.PhotoImage(image)
         self.panel.config(image=photo)
         self.panel.image = photo
